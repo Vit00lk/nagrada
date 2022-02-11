@@ -9,8 +9,11 @@ adsRankDivider = 10
 print (Back.CYAN)
 rank = input( "Введите ранг игрока: ")
 
-rewardSilver = ( int(rank) // adsRankDivider * adsRewardPerRank + adsRewardInitial)
-print (Back.GREEN)
-print ("Награда за просмотр рекламы составит: " + str(rewardSilver) + " серебра" )
-
+if rank.isdigit() == False:
+    print (Back.RED)
+    print ("Введено неверное значение!")
+else:   
+    rewardSilver = ( int(rank) // adsRankDivider * adsRewardPerRank + adsRewardInitial)
+    print (Back.GREEN)
+    print ("Награда за просмотр рекламы составит: " + str(rewardSilver) + " серебра" )
 input ()
